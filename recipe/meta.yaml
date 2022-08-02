@@ -1,5 +1,5 @@
 {% set name = "tsod" %}
-{% set version = "0.1.3" %}
+{% set version = "0.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 86224f6fc6133bba97522a9032b984bebaf64808018dc39fdf0a734a9251a877
-  
+  sha256: a58aaa2f762928f154fa5e23591ed0f9399dc4f2454c28a36d88a70d097e39e3
+
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
-requirements:  
+requirements:
   host:
     - python  >=3.6
     - pip
@@ -35,12 +35,11 @@ test:
 
 about:
   home: https://github.com/DHI/tsod
-  
+
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Anomaly Detection for time series data'
-  
+  summary: Anomaly Detection for time series data
   doc_url: https://dhi.github.io/tsod/
 
 extra:
