@@ -1,5 +1,5 @@
 {% set name = "tsod" %}
-{% set version = "0.1.4" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a58aaa2f762928f154fa5e23591ed0f9399dc4f2454c28a36d88a70d097e39e3
+  sha256: 101289a3798727ae41686b552be8d492581a026373e6a61e6872c16e7706e49c
 
 build:
   noarch: python
