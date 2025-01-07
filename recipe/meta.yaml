@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 101289a3798727ae41686b552be8d492581a026373e6a61e6872c16e7706e49c
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python  >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python  >=3.6
+    - python >={{ python_min }}
     - numpy
     - pandas
     - joblib
@@ -30,6 +30,7 @@ test:
     - tsod
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
